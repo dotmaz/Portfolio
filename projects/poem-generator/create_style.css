@@ -1,0 +1,240 @@
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Roboto, HelveticaNeue-Light, Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 100;
+}
+
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+#poemCreator{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    display: inline;
+}
+
+#finalizePoem{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: none;
+    opacity: 0;
+}
+
+#selectTitle{
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    top: 10%;
+}
+
+#titleInput{
+    position: absolute;
+    background: transparent;
+    border: none;
+    height: auto;
+    width: 46%;
+    margin: 0 2% 0 2%;
+    padding: 0px;
+    outline: none;
+    font-size: 30px;
+    font-weight: 100;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+    font-family: Roboto;
+    text-align: center;
+    color: rgba(0, 0, 0, .8);
+    
+    left: 50%;
+    top: 25%;
+}
+
+#submitButton{
+    background: lightgreen;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    height: 60px;
+    margin: 0 calc(25% - 100px) 0 calc(25% - 100px);
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    font-weight: 100;
+    line-height: 60px;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    transition-duration: .1s;
+}
+
+#submitButton:hover{
+    background-color: limegreen;
+    color: white;
+}
+
+#submitButton:active{
+    transform: scale(0.9);
+}
+
+#poem{
+    position: absolute;
+    width: auto;
+    max-width: 40%;
+    min-height: 88%;
+    height: auto;
+    margin: 1.5% 2.5% 1.5% 2.5%;
+    padding: 1.5% 2.5% 1.5% 2.5%;
+    font-weight: 100;
+    font-size: 25px;
+    border: 2px solid rgba(0,0,0,0.2);
+    word-wrap: normal;
+    white-space: pre-wrap;
+}
+
+#previewContainer{
+    position: absolute;
+    width: 30%;
+    left: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.previewLabel{
+    width: 100%;
+    height:auto;
+    font-size: 20px;
+    margin: 2% 0 2% 0;
+    border-left: 2px solid black;
+    padding: 0 0 0 10px;
+}
+
+.previewLabel.previewAnimIn{
+    transform: translateX(20px);
+    transition: .2s ease-out;
+}
+
+.previewLabel.previewAnimOut{
+    transform: translateX(0px);
+}
+
+#instruction{
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-size: 50px;
+    font-weight: 300;
+    top: 15%;
+    
+    animation: fadeIn .5s;
+}
+
+#errorInstruction{
+    position: absolute;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    color: #e25134;
+    opacity: 0;
+    font-size: 20px;
+    font-weight: 100;
+    top: 27%;
+    transform: scale(1.0);
+}
+
+#dataContainer{
+    position: absolute;
+    list-style: none;
+    left: calc(50% - 150px);
+    padding: 0;
+    width: 40%;
+    height: auto;
+    top: 34%;
+    
+    animation: fadeIn .5s;
+}
+
+.wordInput{
+    background: transparent;
+    border: none;
+    height: auto;
+    width: 300px;
+    margin-bottom: 10%;
+    padding: 0px;
+    outline: none;
+    font-size: 26px;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+    font-family: Roboto;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+input:focus{
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+}
+
+#title:focus{
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
+}
+
+#nextButton{
+    position: fixed;
+    top: 48%;
+    left: 74%;
+    background-color: white;
+    padding: 0;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 250%;
+    border: 1px solid dimgray;
+    transition-duration: .1s;
+}
+
+
+#nextButton:hover{
+    transform: scale(1.1);
+    background-color: dimgray;
+    color: white;
+}
+#nextButton:active {
+    transform: scale(.9);
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0; transform: scale(.9);}
+    100%{opacity: 1;}
+}

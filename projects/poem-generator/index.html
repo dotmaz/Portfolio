@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GSVlabs Poetry</title>
+        <link rel="stylesheet" type="text/css" href="poems_style.css" />
+        <link rel="stylesheet" type="text/css" href="create_style.css" />
+        
+        <!-- Import fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="poems_app.js"></script>
+        <script src="create_app.js"></script>
+    </head>
+    <body>
+        <div id="controlView">
+            <div class="buttonTrigger" id="newPoemTrigger" onclick="newPoem()">
+                <div class="button" id="newPoem">NEW
+                </div>
+            </div>
+            <div class="buttonTrigger" id="deletePoemsTrigger" onclick="deletePoems()">
+                <div class="button" id="deletePoems">CLEAR
+                </div>
+            </div>
+            <div class="buttonTrigger" id="testPoemTrigger" onclick="testPoem()">
+                <div class="button" id="testPoem">TEST
+                </div>
+            </div>
+        </div>
+        <div id="cardView">
+            <div id="emptyView">No poems here!</div>
+        </div>
+        <div id="cardPreview">
+            <div id="cardPreviewTitle"></div>
+            <div id="cardPreviewDate"></div>
+            <div id="cardPreviewContent"></div>
+            <div id="closeCardPreview" onclick="closeCardPreview()">X
+            </div>
+        </div>
+        <div id="createView">
+            <div id="poemCreator">
+                <div id="previewContainer">
+                    <div class="previewLabel" id="pl1">NOUNS</div>
+                    <div class="previewLabel" id="pl2">ADJECTIVES</div>
+                    <div class="previewLabel" id="pl3">VERBS</div>
+                    <div class="previewLabel" id="pl4">ADVERBS</div>
+                    <div class="previewLabel" id="pl5">PREPOSITIONS</div>
+                </div>
+                <div id="nextButton" onclick="nextClick()">NEXT</div>
+                <div id="instruction">Choose 3 nouns</div>
+                <div id="errorInstruction">Please use only letters</div>
+                <ul id="dataContainer">
+                    <li><input class="wordInput" spellcheck="false" type="text" id="data1"></li>
+                    <li><input class="wordInput" spellcheck="false" type="text" id="data2"></li>
+                    <li><input class="wordInput" spellcheck="false" type="text" id="data3"></li>
+                    
+                </ul>
+                
+            </div>
+            
+            
+            <div id="finalizePoem">
+                <div id="poem"></div>
+                <div id="selectTitle">Choose your title!</div>
+                <input spellcheck="false" type="text" id="titleInput">
+                <div id="submitButton" onclick="submitPoem()">SUBMIT</div>
+            </div>
+        </div>
+        <div id="cancelCreateTrigger" onclick="closeCreate()">
+            <div id="cancelCreateButton">X</div>
+        </div>
+    </body>
+</html>

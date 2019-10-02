@@ -101,6 +101,7 @@ body{
     padding: 0px;
     display: inline-block;
     position: relative;
+    user-select: none;
 }
 
 #name{
