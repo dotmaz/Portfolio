@@ -1,114 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mazin Abubeker</title>
-        <link rel="stylesheet" type="text/css" href="main.css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300" rel="stylesheet">
-    </head>
-    <body>
-        <ul id="nav">
-            <a class="navlink" href="#nav">
-                <div class="navbox"></div>
-                <div class="navtext">Home</div>
-            </a>
-            <a class="navlink" href="assets/Resume.pdf" type="application/pdf">
-                <div class="navbox"></div>
-                <div class="navtext">Resume</div>
-            </a>
-            <a class="navlink" href="projects.html">
-                <div class="navbox"></div>
-                <div class="navtext">Demos</div>
-            </a>
-        </ul>
-        <div class="line">
-        </div>
-        <div id="main">
-            <div id="splash">
-                
-                <div id="particles-js"></div>
-                <script type="text/javascript" src="lib/particles.js"></script>
-                <script type="text/javascript" src="lib/app.js"></script>
-                <!--
-                <script type="text/javascript" src="projects/blobs/blobs.js"></script>
-                -->
-                <div id="namecontainer">
-                    <p id="name">MAZIN ABUBEKER</p>
-                </div>
-            </div>
-            <div class="line a" style="width: 800px; top: 10px;"></div>
-            <p id="abouttitle">About Me</p>
-            <div id="aboutcontainer">
-                <p id="about">
-                    Hello! My name is Mazin.<br><br>
-                    I am a fourth year student studying Computer Science at UC San Diego.<br>
-                    I'm primarily interested in coding and front-end design.<br>
-                </p>
-            </div>
-            
-            <div class="line" style="width: 800px; top: 10px;"></div>
-            <p id="skillstitle">Skills</p>
-            <ul id="skills">
-                <div id="trigger">
-                    <img id="rainbow" src="assets/rainbow.svg"/>
-                    <div id="circle"></div>
-                    <div id="tracerload">
-                        <div id="tracer"></div>
-                    </div>
-                    <div id="outline"></div>
-                    <div id="skilltext">C++</div>
-                </div>
-                <div id="trigger">
-                    <img id="rainbow" src="assets/rainbow.svg"/>
-                    <div id="circle"></div>
-                    <div id="tracerload">
-                        <div id="tracer"></div>
-                    </div>
-                    <div id="outline"></div>
-                    <div id="skilltext" style="font-size: 33px">Python</div>
-                </div>
-                <div id="trigger">
-                    <img id="rainbow" src="assets/rainbow.svg"/>
-                    <div id="circle"></div>
-                    <div id="tracerload">
-                        <div id="tracer"></div>
-                    </div>
-                    <div id="outline"></div>
-                    <div id="skilltext" style="font-size: 30px">HTML5</div>
-                </div>
-                <div id="trigger">
-                    <img id="rainbow" src="assets/rainbow.svg"/>
-                    <div id="circle"></div>
-                    <div id="tracerload">
-                        <div id="tracer"></div>
-                    </div>
-                    <div id="outline"></div>
-                    <div id="skilltext">CSS</div>
-                </div>
-                <div id="trigger">
-                    <img id="rainbow" src="assets/rainbow.svg"/>
-                    <div id="circle"></div>
-                    <div id="tracerload">
-                        <div id="tracer"></div>
-                    </div>
-                    <div id="outline"></div>
-                    <div id="skilltext">JS</div>
-                </div>
-            </ul>
-            <div class="line" style="width: 800px;">
-            <div id="email">mazinabubeker1123@gmail.com</div>
-            <ul id="footerlinks">
-                <a class="footerlink" href="mailto:mazinabubeker1123@gmail.com">
-                    <img id="footerimage" src="assets/email.svg"/>
-                </a>
-                <a class="footerlink" href="https://github.com/dotmaz" target="_blank">
-                    <img id="footerimage" src="assets/github.svg"/>
-                </a>
-                <a class="footerlink" href="https://www.linkedin.com/in/mazin-abubeker-905419159/" target="_blank">
-                    <img id="footerimage" src="assets/linkedin.svg"/>
-                </a>
-            </ul>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="addons/p5.min.js"></script>
+    <script src="addons/p5.dom.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100&display=swap" rel="stylesheet">
+      
+  </head>
+  <body scroll="no" style="overflow: hidden">
+    <script id="jsthing" src="sketch.js"></script>
+      <div id="buttonsContainer">
+        <a class="navlink" href="assets/Resume.pdf" target="_blank" type="application/pdf" style="text-decoration: none;">
+            <div class="button" id="item1">RÉSUMÉ</div>
+        </a>
+        <div class="button" id="item2" onclick="openProjects()">PROJECTS</div>
+      </div>
+      <div id="projectsContent">
+          <div id="projectList">
+              <a class="projectTitleLink" target="_blank" href="projects/3d-projection/index.html">
+              
+                  <div class="projectTitle" onmouseover="setDescription(`
+                                                         My implementation of projecting 3D points onto a 2D surface, coupled with real time transformations for user interaction
+                                                         `)">3D PROJECTION</div>
+             </a>
+              <a class="projectTitleLink" target="_blank" href="projects/poem-generator/index.html">
+                  <div class="projectTitle"onmouseover="setDescription(`
+                                                    A poem generation app I made for GSVLabs during my internship application process
+                                                    `)">POEM GENERATOR</div>
+              </a>
+              
+              <a class="projectTitleLink" target="_blank" href="projects/pivotsim/index.html">
+                  <div class="projectTitle" onmouseover="setDescription(`
+                                                    An interactive visualizer determined by pivot count and intensity over time
+                                                    `)">PIVOTS</div>
+              </a>
+              
+          </div>
+          <div id="projectDescriptionContainer">
+              <div id="projectDescription"></div>
+          </div>
+          <div id="backButton" onclick="closeProjects()">←</div>
+          
+      </div>
+  </body>
 </html>

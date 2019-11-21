@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
         <meta charset="UTF-8">
-        <title>JS</title>
+        <title>Pivots</title>
         <style type="text/css">
             canvas{
             }
@@ -11,10 +11,50 @@
                 overflow: hidden;
                 margin: 0;
             }
+            #instructions{
+                letter-spacing: .4px;
+                font-family: Roboto;
+                text-align: left;
+                font-size: 14px;
+                padding: 15px;
+                line-height: 20px;
+                width: auto;
+                height: auto;
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
+                user-select: none;
+                pointer-events: none;
+            }
+            
+            #counters{
+                display: block;
+                font-family: Roboto;
+                text-align: left;
+                font-size: 26px;
+                padding: 10px;
+                width: 110px;
+                text-align: center;
+                height: 28px;
+/*                box-shadow: 0px 4px 10px 1px rgba(0,0,0,.1);*/
+                position: absolute;
+                top: 30px;
+                left: calc(50% - 65px);
+                user-select: none;
+                word-wrap: break-word;
+                overflow: hidden;
+                pointer-events: none;
+            }
         </style>
     </head>
     <body>
         <canvas></canvas>
-        <script src="test.js"></script>
+        <script src="sketch.js"></script>
+        <div id="instructions">
+        Left/Right arrow | Modulate the number of pivots<br>
+        Up/Down arrow | Modulate the wave magnitude<br>
+        Space | Reset
+        </div>
+        <div id="counters">0 | 0</div>
     </body>
 </html>

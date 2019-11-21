@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="addons/p5.min.js"></script>
+    <script src="addons/p5.dom.min.js"></script>
+    <script src="addons/p5.sound.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+      
+  </head>
+  <body scroll="no" style="overflow: hidden">
+    <script src="sketch.js"></script>
+      
+      
+      <div id="sidebar">
+          <div id="blurScreen"></div>
+          <div id="customControls">
+              <div class="label">Scale</div>
+              <div class="sliderContainer">
+                  <div class="sliderBar"></div>
+                  <div style="left: 60px;" onmousedown="moveSlider('scaleSlider')" class="slider" id="scaleSlider"></div>
+              </div>
+              <div class="label">Height</div>
+              <div class="sliderContainer">
+                  <div class="sliderBar"></div>
+                  <div style="left: 85px;" onmousedown="moveSlider('heightSlider')" class="slider" id="heightSlider"></div>
+              </div>
+              <div class="label">X Offset Rate</div>
+              <div class="sliderContainer">
+                  <div class="sliderBar"></div>
+                  <div style="left: 60px;" onmousedown="moveSlider('xVelocitySlider')" class="slider" id="xVelocitySlider"></div>
+              </div>
+              <div class="label">Y Offset Rate</div>
+              <div class="sliderContainer">
+                  <div class="sliderBar"></div>
+                  <div style="left: 60px;" onmousedown="moveSlider('yVelocitySlider')" class="slider" id="yVelocitySlider"></div>
+              </div>
+          </div>
+          <div id="mainControls">
+              <div class="modelTypeContainer">
+                  <div id="previous" onclick="previousModel()"><</div>
+                  <div id="currentModel">Perlin Noise</div>
+                  <div id="next" onclick="nextModel()">></div>
+              </div>
+              <div style="margin: 10px 0 0 0;" class="label">Square Size</div>
+              <div class="counterContainer">
+                  <div id="decrement" onclick="decrementSize()">-</div>
+                  <div id="sizeCount">0</div>
+                  <div id="increment" onclick="incrementSize()">+</div>
+              </div>
+          </div>
+          
+      </div>
+      
+      
+    </body>
+</html>

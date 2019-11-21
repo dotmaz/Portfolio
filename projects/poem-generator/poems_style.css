@@ -165,7 +165,6 @@ body{
 
 #cardPreview{
     position: fixed;
-    
     width: 700px;
     height: 350px;
     top: calc(50% - 175px);
@@ -269,6 +268,29 @@ body{
     cursor: pointer;
 }
 
+#liveContainer{
+    width: 74px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 37px);
+    bottom: 2%;
+    text-align: right;
+    line-height: 50px;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+#liveSignal{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: 14px;
+}
+
 .button{
     width: 100%;
     height: 100%;
@@ -280,7 +302,7 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    animation: slideIn 0.7s ease-out;
+    animation: slideIn 0.35s ease-out;
     overflow: hidden;
 }
 

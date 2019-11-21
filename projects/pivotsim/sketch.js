@@ -77,19 +77,20 @@ function animate(){
         particles[i].update();
     }
     
-    c.font = '30px Roboto';
-    c.fillText(val1 + " | " + val2, 20, 40);
-    c.font = '20px Roboto';
-    c.fillText("Left/right to modulate pivot count", 20, 80);
-    c.fillText("Up/down to modulate intensity", 20, 110);
-    c.fillText("Space to reset", 20, 140);
+    document.getElementById('counters').innerHTML = val1.toString() + " | " + val2.toString();
+//    c.font = '30px Roboto';
+//    c.fillText(val1 + " | " + val2, 20, 40);
+//    c.font = '20px Roboto';
+//    c.fillText("Left/right to modulate pivot count", 20, 80);
+//    c.fillText("Up/down to modulate intensity", 20, 110);
+//    c.fillText("Space to reset", 20, 140);
     
     frame++;
 }
 
 function generateParticles(){
     for(var i = 0; i < numOfParticles; i++){
-        particles.push(new Particle(0, 0, 0, 0, 4, 'black', i*(Math.PI*2/numOfParticles), 100));
+        particles.push(new Particle(0, 0, 0, 0, 2, 'black', i*(Math.PI*2/numOfParticles), 100));
     }
 }
 

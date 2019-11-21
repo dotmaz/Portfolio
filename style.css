@@ -1,0 +1,175 @@
+    
+html, body{
+    font-family: Titillium Web;
+}
+
+#projectsContent{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    display: none;
+}
+
+#projectList{
+    position: absolute;
+    width: 250px;
+    height: 400px;
+/*    Adjusted positions for 4px border width*/
+    top: calc(50% - 204px);
+    left: calc(50% - 124px);
+    background: transparent;
+    border-top: 4px solid rgba(0,0,0,.7);
+    border-bottom: 4px solid rgba(0,0,0,.7);
+    animation-fill-mode: forwards;
+    animation: open .2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#projectDescriptionContainer{
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: calc(50% + 180px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#projectDescription{
+    width: 100%;
+    font-size: 14px;    
+    text-align: left;
+    background: transparent;
+    color: rgba(0,0,0,.7);
+    animation: fadeIn .2s ease-out;
+    font-family: Open Sans;
+}
+
+#backButton{
+    width: 46px;
+    height: 46px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 46px;
+    color: rgba(0,0,0,.5);
+    font-weight: 100;
+    font-family: Noto Sans JP;
+    position: absolute;
+    left: calc(50% - 250px);
+    top: calc(50% - 23px);
+    border-radius: 50%;
+    user-select: none;
+    border: 2px solid rgba(0,0,0,0);
+    -webkit-user-select: none;
+    cursor: pointer;
+    transition-duration: .1s;
+    
+}
+
+.projectTitle{
+    margin: 20px 0;
+    width: auto;
+    color: rgba(0,0,0,.7);
+    opacity: 1;
+    transform: scale(1);
+    animation-fill-mode: forwards;
+    animation: reveal .35s ease-out;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: .1s;
+    padding: 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.projectTitleLink{
+    text-decoration: none;
+}
+
+
+.projectTitle:hover{
+    background: rgba(0,0,0,.03);
+    transform: scale(1.1);
+    
+}
+
+#buttonsContainer{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    left: 0%;
+    top: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button{
+    text-align: center;
+    opacity: 0;
+    position: relative;
+    margin: 0 15px;
+    padding: 0;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 40px;
+    transition-duration: .15s;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    animation: fadeIn 1s ease-in-out;    
+    animation-fill-mode: forwards;
+    border: 2px solid rgba(0,0,0,.65);
+    color: rgba(0,0,0,.7);
+}
+.button:hover{
+    background: rgba(0,0,0,.65);
+    border-color: rgba(0,0,0,0);
+    color: white;
+}
+.button:active{
+    transition-duration: .02s;
+    transform: scale(.97);
+}
+
+#jsthing{
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes slideIn{
+    0%{top: -30px;}
+    100%{top: 0px;}
+}
+
+@keyframes open{
+    0%{height: 300px; top: calc(50% - 154px);border-color: rgba(0,0,0,0);}
+    100%{height: 400px; top: calc(50% - 204px);border-color: rgba(0,0,0,.7);}
+}
+/*
+@keyframes open{
+    0%{border-color: rgba(0,0,0,0);}
+    100%{border-color: rgba(0,0,0,.7);}
+}
+*/
+
+@keyframes reveal{
+    0%{opacity: 0;
+       transform: scale(.7);}
+    100%{opacity: 1;
+       transform: scale(1);}
+}
