@@ -28,16 +28,16 @@ function reset(){
 }
 function setup(){
     reset();
-    rotationRatio = Math.PI*.15;
+    rotationRatio = Math.PI*.35;
     previousText = "";
     mirrorOffset = [0,0,0];
     createCanvas(innerWidth, innerHeight);
-    
+
 
     xThetaDynamic = 0;
     yThetaDynamic = 0;
     distanceFromProjection = 50;
-    
+
     var points = [[0,0,1,2,3,4,4,3,3,2.5,1.5,1,1,  0,0,1,2,3,4,4,3,3,2.5,1.5,1,1],
     [0,5,5,3,5,5,0,0,3,2,2,3,0, 0,5,5,3,5,5,0,0,3,2,2,3,0],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2]];
@@ -49,13 +49,13 @@ function setup(){
     for(var i = 0; i < points[1].length; i++){
         points[1][i] -= yMax;
     }
-    
+
     var particles = [];
     for(var i = 0; i < points[0].length; i++){
         var newPoint = [points[0][i], points[1][i], points[2][i]];
         particles.push(new Particle(i, newPoint));
     }
-    
+
     var m_model = new Model(particles, function(){
         for(var i = 0; i < this.particlesSize; i++){
             if(i != this.particlesSize/2-1 && i!= this.particlesSize-1){
@@ -71,9 +71,9 @@ function setup(){
             }
         }
     }, -180, -90, 6);
-    
+
     models.push(m_model);
-    
+
     var points = [[0,1.5,2.5,4,3,2.5,1.5,1,0,1.5,2.5,4,3,2.5,1.5,1,1.7,2,2.3],
                   [0,5,5,0,0,2,2,0,0,5,5,0,0,2,2,0,3,4,3],
                   [1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,1,1,1]]
@@ -85,13 +85,13 @@ function setup(){
     for(var i = 0; i < points[1].length; i++){
         points[1][i] -= yMax;
     }
-    
+
     var particles = [];
     for(var i = 0; i < points[0].length; i++){
         var newPoint = [points[0][i], points[1][i], points[2][i]];
         particles.push(new Particle(i, newPoint));
     }
-    
+
     var a_model = new Model(particles, function(){
         for(var i = 0; i < this.particlesSize-3; i++){
             if(i != (this.particlesSize-3)/2-1 && i!= this.particlesSize-4){
@@ -110,9 +110,9 @@ function setup(){
         drawLine(this.particles[this.particlesSize-2].pos2d, this.particles[this.particlesSize-1].pos2d);
         drawLine(this.particles[this.particlesSize-1].pos2d, this.particles[this.particlesSize-3].pos2d);
     }, 0, -90, 6);
-    
+
     models.push(a_model);
-    
+
     var points = [[0,0,3,0,0,4,4,1,4,4,0,0,3,0,0,4,4,1,4,4],
                   [0,1,4,4,5,5,4,1,1,0,0,1,4,4,5,5,4,1,1,0],
                   [1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2]];
@@ -127,13 +127,13 @@ function setup(){
     for(var i = 0; i < points[1].length; i++){
         points[1][i] -= yMax;
     }
-    
+
     var particles = [];
     for(var i = 0; i < points[0].length; i++){
         var newPoint = [points[0][i], points[1][i], points[2][i]];
         particles.push(new Particle(i, newPoint));
     }
-    
+
     var z_model = new Model(particles, function(){
         for(var i = 0; i < this.particlesSize; i++){
             if(i != this.particlesSize/2-1 && i!= this.particlesSize-1){
@@ -148,19 +148,19 @@ function setup(){
 
             }
         }
-        
+
 //        for(var i = 0; i < this.particlesSize; i++){
 //            drawLine(this.particles[i].pos2d, this.particles[i].mirrorPos2d);
 //        }
-        
+
     }, 180, -90, 6);
-    
+
     models.push(z_model);
-    
+
     var points = [[0,1,1,0,0,1,1,0],
                   [0,0,1,1,0,0,1,1],
                   [1,1,1,1,2,2,2,2]];
-    
+
     var xMax = Math.max(...points[0])/2;
     var yMax = Math.max(...points[1])/2;
     for(var i = 0; i < points[0].length; i++){
@@ -169,13 +169,13 @@ function setup(){
     for(var i = 0; i < points[1].length; i++){
         points[1][i] -= yMax;
     }
-    
+
     var particles = [];
     for(var i = 0; i < points[0].length; i++){
         var newPoint = [points[0][i], points[1][i], points[2][i]];
         particles.push(new Particle(i, newPoint));
     }
-    
+
     var z_model = new Model(particles, function(){
         noStroke();
         var modulatedEdgeOpacity = edgeOpacity*4;
@@ -204,23 +204,23 @@ function setup(){
 //             x(this.particles[3].pos2d), y(this.particles[3].pos2d),
 //             x(this.particles[7].pos2d), y(this.particles[7].pos2d),
 //             x(this.particles[6].pos2d), y(this.particles[6].pos2d));
-        
-        
-        
+
+
+
         stroke(0, 255*edgeOpacity*globalOpacity);
         fill(0, 150*t*globalOpacity);
     }, 0, -100, 6);
-    
+
 //    models.push(z_model);
 }
 
 var plateOpacity = 0;
 
 function draw(){
-    
+
     frame++;
     background(255);
-    
+
     if(pause){
         if(globalOpacity >= 0){
             globalOpacity -= .1;
@@ -229,17 +229,17 @@ function draw(){
         if(globalOpacity != 1){
             globalOpacity = 1;
         }
-        
+
     }
     if(globalOpacity >= 0){
         fill(0, 150*t*globalOpacity);
         stroke(0, 255*edgeOpacity*globalOpacity);
 
-        
+
         for(var i = 0; i < models.length; i++){
             models[i].update();
         }
-        
+
         if(t < .9999){
             t += (1 - t)/15;
         }
@@ -258,7 +258,7 @@ function Model(particles, renderFunction, xOffset, yOffset, dragOffset){
     this.particles = particles;
     this.particlesSize = this.particles.length;
     this.renderFunction = renderFunction;
-    
+
     this.update = function(){
         for(var i = 0; i < this.particlesSize; i++){
             this.particles[i].update(this.xOffset, this.yOffset, this.dragOffset);
@@ -271,43 +271,43 @@ function Model(particles, renderFunction, xOffset, yOffset, dragOffset){
 function Particle(id, particle){
     this.id = id;
     this.d;
-    
+
     this.originalPos3d = [x(particle), -y(particle), z(particle)];
     this.originalPos2d;
 
     this.pos3dTarget;
     this.pos3d = [0,0,0];
     this.pod2d;
-    
+
     this.p0 = [random() * innerWidth/2 + innerWidth/4, random()*100];
     this.r1 = random()*6.28;
     this.r2 = random()*6.28;
     this.do = random()*2 + 2;
     this.d = this.do;
-    
+
     this.initialize = false;
-    
+
 //    this.mirrorPos3dTarget = [0,0,0];
 //    this.mirrorPos3d = [0,0,0];
 //    this.mirrorOriginalPos3d = [0,0,0];
 //    this.mirrorPos2d = [0,0];
-    
-  
+
+
     this.draw = function(){
         if(this.d > 0){
-            
+
         }
         ellipse(x(this.pos2d), y(this.pos2d), 3);
-        
+
     }
-    
+
     this.update = function(xOffset, yOffset, dragOffset){
         this.pos2d = [0,0];
-        
+
         if(t == 0){
             this.d = this.do;
         }
-        
+
         if(t > .995){
             if(this.d > 0){
                 this.d -= .2;
@@ -316,12 +316,12 @@ function Particle(id, particle){
                 this.d = 0;
             }
         }
-        
+
         if(1 - t > .0008){
             if(!this.initialize){
                 this.initialize = true;
                 this.pos3dTarget = transformation("rotateX", transformation("rotateY", this.originalPos3d, -Math.PI*.08), Math.PI*.08);
-        
+
                 this.pos3dTarget[0] *= worldScale;
                 this.pos3dTarget[1] *= worldScale;
                 this.pos3dTarget[2] += distanceFromProjection;
@@ -329,7 +329,7 @@ function Particle(id, particle){
                 this.pos3d[1] = this.pos3dTarget[1];
                 this.pos3d[2] = this.pos3dTarget[2];
                 this.originalPos2d = [0,0];
-                
+
                 this.originalPos2d[0] = x(this.pos3dTarget) * (distanceFromProjection / z(this.pos3dTarget)) + innerWidth/2 + xOffset;
                 this.originalPos2d[1] = y(this.pos3dTarget) * (distanceFromProjection / z(this.pos3dTarget)) + innerHeight/2 + yOffset;
                 this.bezierCenter = [(x(this.originalPos2d) + x(this.p0))/2, (y(this.originalPos2d) + y(this.p0))/2];
@@ -339,10 +339,10 @@ function Particle(id, particle){
             this.pos2d[0] = pow(1-t,3) * x(this.p0) + 3*t*pow(1-t,2) * x(this.p1) + 3*pow(t,2)*pow(1-t,1) * x(this.p2) + pow(t,3) * x(this.originalPos2d);
             this.pos2d[1] = pow(1-t,3) * y(this.p0) + 3*t*pow(1-t,2) * y(this.p1) + 3*pow(t,2)*pow(1-t,1) * y(this.p2) + pow(t,3) * y(this.originalPos2d);
         }else{
-            
-            
+
+
             this.pos3dTarget = transformation("rotateX", transformation("rotateY", this.originalPos3d, -xThetaDynamic), yThetaDynamic);
-        
+
             this.pos3dTarget[0] *= worldScale;
             this.pos3dTarget[1] *= worldScale;
             this.pos3dTarget[2] += distanceFromProjection;
@@ -355,29 +355,29 @@ function Particle(id, particle){
 
             this.pos2d[0] = x(this.pos3d) * (distanceFromProjection / z(this.pos3d)) + innerWidth/2 + xOffset;
             this.pos2d[1] = y(this.pos3d) * (distanceFromProjection / z(this.pos3d)) + innerHeight/2 + yOffset;
-            
-            
-            
-            
+
+
+
+
 //            if(id == 0){
 //                this.mirrorOriginalPos3d = this.originalPos3d;
 //                this.mirrorOriginalPos3d[2] = 2;
 //                this.mirrorPos3dTarget = transformation("rotateX", transformation("rotateY", this.mirrorOriginalPos3d, -xThetaDynamic), yThetaDynamic);
-//                
+//
 //                this.mirrorPos3dTarget[0] *= worldScale;
 //                this.mirrorPos3dTarget[1] *= worldScale;
 //                this.mirrorPos3dTarget[2] += distanceFromProjection;
-//                
-//                
-//                
+//
+//
+//
 //                if(xThetaDynamic != 0 && yThetaDynamic != 0){
 //                    this.mirrorPos3d[0] += (x(this.mirrorPos3dTarget) - x(this.mirrorPos3d))/dragOffset;
 //                    this.mirrorPos3d[1] += (y(this.mirrorPos3dTarget) - y(this.mirrorPos3d))/dragOffset;
 //                    this.mirrorPos3d[2] += (z(this.mirrorPos3dTarget) - z(this.mirrorPos3d))/dragOffset;
 //                }
-//                
+//
 //                mirrorOffset = subArray(this.pos3d, this.mirrorPos3d);
-//                
+//
 //            }else{
 //                this.mirrorPos3d[0] = this.pos3d[0] - x(mirrorOffset);
 //                this.mirrorPos3d[1] = this.pos3d[1] - y(mirrorOffset);
@@ -387,7 +387,7 @@ function Particle(id, particle){
 //            this.mirrorPos2d[1] = y(this.mirrorPos3d) * (distanceFromProjection / z(this.mirrorPos3d)) + innerHeight/2 + yOffset;
 //            console.log();
         }
-        
+
         this.draw();
     }
 }
@@ -408,15 +408,15 @@ function z(point){
 
 console.log(subArray([1,2],[1,1]));
 function transformation(type, points, theta){
-    /*//--------- 
-    
+    /*//---------
+
      = [[0,0,0],
         [0,0,0],
         [0,0,0]];
-    
+
     *///----------
     var matrix;
-    
+
     if(type == "sheerX"){
         matrix = [[1,Math.tan(theta),0],
                   [0,1,0],
@@ -481,11 +481,11 @@ function openProjects(){
             $("#projectsContent").animate({
                 'opacity': '1'
             }, 300, function(){
-                
+
             });
         });
 }
-function closeProjects(){    
+function closeProjects(){
     $("#projectsContent").animate({
         'opacity': '0'
     }, 300, function(){
@@ -495,7 +495,7 @@ function closeProjects(){
         $("#buttonsContainer").animate({
             'opacity': '1'
         }, 150, function(){
-            
+
         });
     });
 }
@@ -504,7 +504,7 @@ function setDescription(a){
     if(isChanging == false && previousText != a){
         previousText = a;
         isChanging = true;
-        
+
         $('#projectDescription').animate({
             'opacity': '.3'
         }, 70, function(){
