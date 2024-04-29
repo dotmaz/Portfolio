@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <link rel = "stylesheet" type = "text/css" href = "style.css" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      width="device-width,"
+      initial-scale="1.0,"
+      maximum-scale="1.0,"
+      user-scalable="0"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Mazin Abubeker</title>
-      
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <style> body {padding: 0; margin: 0;} </style>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
     <script src="addons/p5.min.js"></script>
     <script src="addons/p5.dom.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100&display=swap" rel="stylesheet">
-      
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body scroll="no" style="overflow: hidden">
     <script id="jsthing" src="sketch.js"></script>
-      <div id="buttonsContainer">
-        <a class="navlink" href="assets/Resume.pdf" target="_blank" type="application/pdf" style="text-decoration: none;">
-            <div class="button" id="item1">RÉSUMÉ</div>
-        </a>
-        <div class="button" id="item2" onclick="openProjects()">PROJECTS</div>
-      </div>
-      <div id="projectsContent">
-          <div id="projectList">
-              <a class="projectTitleLink" target="_blank" href="projects/3d-projection/index.html">
-              
-                  <div class="projectTitle" onmouseover="setDescription(`
+    <div id="buttonsContainer">
+      <a
+        class="navlink"
+        href="assets/Resume.pdf"
+        target="_blank"
+        type="application/pdf"
+        style="text-decoration: none"
+      >
+        <div class="button" id="item1">RÉSUMÉ</div>
+      </a>
+      <div class="button" id="item2" onclick="openProjects()">PROJECTS</div>
+    </div>
+    <div id="projectsContent">
+      <div id="projectList">
+        <a
+          class="projectTitleLink"
+          target="_blank"
+          href="projects/3d-projection/index.html"
+        >
+          <div
+            class="projectTitle"
+            onmouseover="setDescription(`
                                                          My implementation of projecting 3D points onto a 2D surface, coupled with real time transformations for user interaction
-                                                         `)">3D PROJECTION</div>
-             </a>
-              <a class="projectTitleLink" target="_blank" href="projects/poem-generator/index.html">
-                  <div class="projectTitle"onmouseover="setDescription(`
-                                                    A poem generation app I made for GSVLabs during my internship application process
-                                                    `)">POEM GENERATOR</div>
-              </a>
-              
-              <a class="projectTitleLink" target="_blank" href="projects/pivotsim/index.html">
-                  <div class="projectTitle" onmouseover="setDescription(`
-                                                    An interactive visualizer determined by pivot count and intensity over time
-                                                    `)">PIVOTS</div>
-              </a>
-              
+                                                         `)"
+          >
+            3D PROJECTION
           </div>
-          <div id="projectDescriptionContainer">
-              <div id="projectDescription"></div>
+        </a>
+        <a
+          class="projectTitleLink"
+          target="_blank"
+          href="https://preservejs.vercel.app"
+        >
+          <div
+            class="projectTitle"
+            onmouseover="setDescription(`
+                                                    An open-source library to persist and hydrate lost form data
+                                                    `)"
+          >
+            PRESERVE.JS
           </div>
-          <div id="backButton" onclick="closeProjects()">←</div>
-          
+        </a>
+        <a
+          class="projectTitleLink"
+          target="_blank"
+          href="https://therasonic.vercel.app"
+        >
+          <div
+            class="projectTitle"
+            onmouseover="setDescription(`
+                                                    A personalized Spotify playlist generator based on mood
+                                                    `)"
+          >
+            THERASONIC
+          </div>
+        </a>
       </div>
+      <div id="projectDescriptionContainer">
+        <div id="projectDescription"></div>
+      </div>
+      <div id="backButton" onclick="closeProjects()">←</div>
+    </div>
   </body>
 </html>
